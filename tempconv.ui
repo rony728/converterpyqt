@@ -70,7 +70,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinFhar">
+   <widget class="QSpinBox" name="spinFahr">
     <property name="geometry">
      <rect>
       <x>300</x>
