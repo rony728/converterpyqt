@@ -15,15 +15,15 @@ class MyWindowClass(QtWidgets.QMainWindow, form_class):
 
  # Evento del boton btn_CtoF
   def btn_CtoF_clicked(self):
-      cel = float(self.editCel.text())
-      fahr = cel * 9 / 5.0 + 32
-      self.spinFahr.setValue(int(fahr + 0.5))
+      c = float(self.cel.text())
+      f = round(( 9 / 5 ) * c + 32, 2)
+      self.fah.setText(str(f))
  
  # Evento del boton btn_FtoC
   def btn_FtoC_clicked(self):
-      fahr = self.spinFahr.value()
-      cel = ((fahr - 32) * 5) / 9
-      self.editCel.setText(str(cel))
+      f = float(self.fah.text())
+      c = round((f - 32) * (5 / 9), 2)
+      self.cel.setText(str(c))
  
 app = QtWidgets.QApplication(sys.argv)
 MyWindow = MyWindowClass(None)
