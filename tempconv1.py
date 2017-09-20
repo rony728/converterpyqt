@@ -4,14 +4,14 @@
 
  
 import sys, math
-from PyQt4 import QtCore, QtGui, uic
+from PyQt5 import QtCore, uic, QtWidgets
  
 # Cargar nuestro archivo .ui en misma carpeta de archivo.py 
 form_class = uic.loadUiType("tempconv.ui")[0]
  
-class MyWindowClass(QtGui.QMainWindow, form_class):
+class MyWindowClass(QtWidgets.QMainWindow, form_class):
  def __init__(self, parent=None):
-  QtGui.QMainWindow.__init__(self, parent)
+  QtWidgets.QMainWindow.__init__(self, parent)
   self.setupUi(self)
   self.btn_CtoF.clicked.connect(self.btn_CtoF_clicked)
   self.btn_FtoC.clicked.connect(self.btn_FtoC_clicked)
@@ -29,7 +29,7 @@ class MyWindowClass(QtGui.QMainWindow, form_class):
   cel = ((fahr - 32) * 5) / 9
   self.editCel.setText(str(cel))
  
-app = QtGui.QApplication(sys.argv)
+app = QtWidgets.QApplication(sys.argv)
 MyWindow = MyWindowClass(None)
 MyWindow.show()
 app.exec_()
